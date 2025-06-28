@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane fx:id="tabPane" xmlns:fx="http://javafx.com/fxml" fx:controller="application.PeerGUIController">
+    <tabs>
+        <!-- Register Tab -->
+        <Tab fx:id="registerTab" text="Register">
+            <VBox spacing="10" alignment="TOP_LEFT">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Register New Peer"/>
+                <HBox spacing="10">
+                    <Label text="Name:"/>
+                    <TextField fx:id="regNameField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Port:"/>
+                    <TextField fx:id="regPortField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="My File CSV Path:"/>
+                    <TextField fx:id="regMyFileCsvField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Shared File CSV Path:"/>
+                    <TextField fx:id="regSharedFileCsvField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="My Folder Path:"/>
+                    <TextField fx:id="regMyFolderField" prefWidth="250"/>
+                </HBox>
+                <Button text="Register" onAction="#onRegister"/>
+                <TextArea fx:id="regOutputArea" editable="false" prefRowCount="3"/>
+            </VBox>
+        </Tab>
+        <!-- Login Tab -->
+        <Tab fx:id="loginTab" text="Login">
+            <VBox spacing="10" alignment="TOP_LEFT">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Login Existing Peer"/>
+                <HBox spacing="10">
+                    <Label text="ID:"/>
+                    <TextField fx:id="loginIdField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Name:"/>
+                    <TextField fx:id="loginNameField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Port:"/>
+                    <TextField fx:id="loginPortField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="My File CSV Path:"/>
+                    <TextField fx:id="loginMyFileCsvField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Shared File CSV Path:"/>
+                    <TextField fx:id="loginSharedFileCsvField" prefWidth="250"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="My Folder Path:"/>
+                    <TextField fx:id="loginMyFolderField" prefWidth="250"/>
+                </HBox>
+                <Button text="Login" onAction="#onLogin"/>
+                <TextArea fx:id="loginOutputArea" editable="false" prefRowCount="3"/>
+            </VBox>
+        </Tab>
+        <!-- Main Tab -->
+        <Tab fx:id="mainTab" text="Main" disable="true">
+            <VBox spacing="10" alignment="TOP_LEFT">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <HBox spacing="10">
+                    <Button text="View Connected Peers" onAction="#onViewPeers"/>
+                    <Button text="List Own Shared Files" onAction="#onListOwnFiles"/>
+                    <Button text="List All Shared Files" onAction="#onListAllFiles"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Button text="Search File" onAction="#onSearchFile"/>
+                    <Button text="Download File" onAction="#onDownloadFile"/>
+                    <Button text="Share New File" onAction="#onShareNewFile"/>
+                    <Button text="Exit" onAction="#onExit"/>
+                </HBox>
+                <Label text="Results / Output:"/>
+                <TextArea fx:id="mainOutputArea" editable="false" prefRowCount="10"/>
+            </VBox>
+        </Tab>
+    </tabs>
+</TabPane>
